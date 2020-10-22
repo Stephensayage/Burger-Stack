@@ -28,6 +28,9 @@ export default function Ingredients(props) {
     case "lettuce":
       ingredient = <div className={classes.Lettuce}></div>;
       break;
+    case "tomatoe":
+      ingredient = <div className={classes.Tomatoe}></div>;
+      break;
     default:
       ingredient = null;
   }

@@ -96,6 +96,14 @@
   border-radius: 20px;
 }
 
+.Tomatoe {
+  width: 70%;
+  height: 5%;
+  margin: 2% auto;
+  background: linear-gradient(#cb1e1e, #c44b45);
+  border-radius: 20px;
+}
+
 .Lettuce {
   width: 85%;
   height: 7%;
