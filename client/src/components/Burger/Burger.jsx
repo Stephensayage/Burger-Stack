@@ -3,14 +3,16 @@ import classes from "./Burger.css";
 import Ingredients from "./Ingredients/Ingredients";
 
 export default function Burger(props) {
+  const burgerIngredients = Object.keys(props.ingredients).map((ingredient) => {
+    return [...Array(props.ingredients[ingredient])].map((el, idx) => {
+      return <Ingredients key={ingredient + idx} type={ingredient} />;
+    });
+  });
+
   return (
     <div className={classes.Burger}>
       <Ingredients type="bread-top" />
-      <Ingredients type="lettuce" />
-      <Ingredients type="tomatoe" />
-      <Ingredients type="cheese" />
-      <Ingredients type="bacon" />
-      <Ingredients type="meat" />
+      {burgerIngredients}
       <Ingredients type="bread-bottom" />
     </div>
   );
