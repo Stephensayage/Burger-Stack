@@ -5,6 +5,16 @@
   flex-flow: column;
   align-items: center;
   box-shadow: 0 2px 1px #ccc;
-  margin: auto;
+  margin: auto auto 50px auto;
   padding: 10px 0;
+}
+
+.PriceCtn {
+  border: 1px solid silver;
+  border-radius: 2px;
+  padding: 15px;
+  margin: 15px;
+}
+.Price {
+  color: silver;
 }

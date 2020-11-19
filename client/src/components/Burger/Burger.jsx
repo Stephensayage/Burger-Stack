@@ -12,7 +12,6 @@ export default function Burger(props) {
     .reduce((arr, el) => {
       return arr.concat(el);
     }, []);
-  console.log(burgerIngredients);
 
   if (burgerIngredients.length === 0) {
     burgerIngredients = <p>Start adding ingredients!</p>;

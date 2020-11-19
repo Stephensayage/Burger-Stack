@@ -29,6 +29,12 @@
   background-color: #73c5ff;
   color: white;
 }
+.Subtract:disabled {
+  background-color: grey;
+}
+.Subtract:disabled:hover {
+  background-color: grey;
+}
 .Add {
   background-color: #73c5ff;
   color: white;

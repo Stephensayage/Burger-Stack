@@ -5,9 +5,17 @@ export default function Control(props) {
   return (
     <div className={classes.Control}>
       <div className={classes.Label}>{props.label}</div>
-      <button className={classes.Add}>+</button>
-      <span>0</span>
-      <button className={classes.Subtract}>-</button>
+      <button className={classes.Add} onClick={props.addIngredient}>
+        +
+      </button>
+      <span>{props.ingredients}</span>
+      <button
+        className={classes.Subtract}
+        onClick={props.removeIngredient}
+        disabled={props.disabled}
+      >
+        -
+      </button>
     </div>
   );
 }

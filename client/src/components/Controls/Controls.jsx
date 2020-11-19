@@ -13,11 +13,17 @@ export default function Controls(props) {
 
   return (
     <div className={classes.Controls}>
+      <div className={classes.PriceCtn}>
+        <span className={classes.Price}>Price ${props.price.toFixed(2)}</span>
+      </div>
       {ctrl.map((control) => (
         <Control
+          ingredients={props.ingredients[control.type]}
+          addIngredient={() => props.addIngredient(control.type)}
+          removeIngredient={() => props.removeIngredient(control.type)}
+          disabled={props.disabled[control.type]}
           key={control.label}
           label={control.label}
-          type={control.type}
         />
       ))}
     </div>
