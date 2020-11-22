@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Burger from "../../components/Burger/Burger";
 import Controls from "../../components/Controls/Controls";
+import Modal from "../../components/layout/UI/Modal";
 import Aux from "../../hoc/Aux";
 
 const BURGER_PRICES = {
@@ -21,7 +22,20 @@ export default class BurgerScreen extends Component {
       meat: 0,
     },
     price: 3.25,
+    canCheckout: false,
   };
+
+  updateCheckoutState(ingredients) {
+    const sum = Object.keys(ingredients)
+      .map((key) => {
+        return ingredients[key];
+      })
+      .reduce((sum, el) => {
+        return sum + el;
+      }, 0);
+    console.log(sum);
+    this.setState({ canCheckout: sum > 0 });
+  }
 
   addIngredient = (type) => {
     const currentCount = this.state.ingredients[type];
@@ -31,12 +45,12 @@ export default class BurgerScreen extends Component {
     };
     updatedIngredients[type] = newCount;
     const tallyCost = BURGER_PRICES[type];
-    console.log(`Tallycost ${tallyCost}`);
     const newPrice = this.state.price + tallyCost;
     this.setState({
       ingredients: updatedIngredients,
       price: newPrice,
     });
+    this.updateCheckoutState(updatedIngredients);
   };
 
   removeIngredient = (type) => {
@@ -56,6 +70,7 @@ export default class BurgerScreen extends Component {
       ingredients: updatedIngredients,
       price: newPrice,
     });
+    this.updateCheckoutState(updatedIngredients);
   };
 
   render() {
@@ -75,6 +90,7 @@ export default class BurgerScreen extends Component {
           addIngredient={this.addIngredient}
           removeIngredient={this.removeIngredient}
           disabled={disableButton}
+          canCheckout={this.state.canCheckout}
         />
       </Aux>
     );

@@ -26,6 +26,9 @@ export default function Controls(props) {
           label={control.label}
         />
       ))}
+      <button className={classes.OrderButton} disabled={!props.canCheckout}>
+        Checkout
+      </button>
     </div>
   );
 }

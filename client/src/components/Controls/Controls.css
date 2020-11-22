@@ -1,6 +1,6 @@
 .Controls {
   width: 100%;
-  background-color: rgb(0, 59, 142);
+  background-color: #eca640;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -10,11 +10,52 @@
 }
 
 .PriceCtn {
-  border: 1px solid silver;
+  border: 1px solid white;
   border-radius: 2px;
   padding: 15px;
   margin: 15px;
 }
 .Price {
-  color: silver;
+  color: White;
+}
+.OrderButton {
+  background-color: #fc440f;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #ed1c24;
+  color: white;
+  font-size: 1.2em;
+  padding: 15px 30px;
+  font-family: "PT Sans", sans-serif;
+  margin: 15px;
+}
+
+.OrderButton:hover,
+.OrderButton:active {
+  background-color: #ffe54d;
+  border: 2px solid #ed1c24;
+  color: white;
+}
+
+.OrderButton:disabled {
+  background-color: #a9aca9;
+  cursor: not-allowed;
+  border: 1px solid #ed1c24;
+  color: white;
+}
+
+.OrderButton:not(:disabled) {
+  animation: enable 0.3s linear;
+}
+
+@keyframes enable {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
