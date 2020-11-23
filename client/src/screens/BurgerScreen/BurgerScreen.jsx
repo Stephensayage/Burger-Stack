@@ -83,6 +83,7 @@ export default class BurgerScreen extends Component {
 
     return (
       <Aux>
+        <Modal />
         <Burger ingredients={this.state.ingredients} />
         <Controls
           price={this.state.price}
